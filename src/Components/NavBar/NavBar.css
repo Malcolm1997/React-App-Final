@@ -1,0 +1,10 @@
+.nav{
+    display:flex;
+    justify-content: space-around;
+    margin-top: 15px;
+
+}
+
+li{
+    list-style: none;
+}

@@ -1,0 +1,8 @@
+.productDetail{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    border: black 1px solid;
+    margin: 0 20%;
+    width: 60%;
+}

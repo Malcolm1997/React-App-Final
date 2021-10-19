@@ -1,24 +1,61 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import NavBar from './Components/NavBar/NavBar';
+import Main from './Components/Main/Main';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import React, {useEffect, useState} from 'react';
+
+
 
 function App() {
+
+
+  const [prod, setProd] = useState(null)
+
+
+  const tarea = new Promise((resolve, reject) => {
+      
+          
+          resolve([
+            {id: '1', name: 'Coca', precio: 200, description:'Es una gaseosa', category: 'gaseosa'},
+            {id: '2', name: 'Sprite', precio: 150, description:'Es una gaseosa', category: 'gaseosa'},
+            {id: '3', name: 'Vodka', precio: 600, description:'Es una bebida alcholica', category: 'alcohol'},
+            {id: '4', name: 'Fernet', precio: 800, description:'Es una bebida alcholica', category: 'alcohol'},
+            {id: '5', name: 'Speed', precio: 100, description:'Es un energizante', category: 'energizante'}
+          ])
+
+      
+  })
+
+  useEffect(() => {
+      tarea.then(res => setProd(res))
+  },)
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar/>
+    <Switch>
+      <Route exact path="/">
+        <Main/>
+      </Route>   
+
+      <Route exact path="/category/:category">
+        <Main/>
+      </Route>
+       
+      <Route exact path="/productos/:name">
+        <ItemDetailContainer  item={prod}/>
+      </Route>
+
+      <Route exact path="*">
+        <h1>Error de carga</h1>
+      </Route> 
+
+    </Switch>
+    </BrowserRouter>
   );
 }
 
