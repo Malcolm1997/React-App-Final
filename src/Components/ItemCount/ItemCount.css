@@ -1,0 +1,13 @@
+.containerCount{
+    display:flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.containerCount button{
+    width: 30%;
+}
+
+.btnAgregarCarrito{
+    padding:1.5%;
+}

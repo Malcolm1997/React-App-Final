@@ -17,11 +17,11 @@ function App() {
       
           
           resolve([
-            {id: '1', name: 'Coca', precio: 200, description:'Es una gaseosa', category: 'gaseosa'},
-            {id: '2', name: 'Sprite', precio: 150, description:'Es una gaseosa', category: 'gaseosa'},
-            {id: '3', name: 'Vodka', precio: 600, description:'Es una bebida alcholica', category: 'alcohol'},
-            {id: '4', name: 'Fernet', precio: 800, description:'Es una bebida alcholica', category: 'alcohol'},
-            {id: '5', name: 'Speed', precio: 100, description:'Es un energizante', category: 'energizante'}
+            {id: '1', name: 'Coca', precio: 200, description:'Es una gaseosa', category: 'gaseosa', stock:5},
+            {id: '2', name: 'Sprite', precio: 150, description:'Es una gaseosa', category: 'gaseosa', stock:9},
+            {id: '3', name: 'Vodka', precio: 600, description:'Es una bebida alcholica', category: 'alcohol', stock:5},
+            {id: '4', name: 'Fernet', precio: 800, description:'Es una bebida alcholica', category: 'alcohol', stock:9},
+            {id: '5', name: 'Speed', precio: 100, description:'Es un energizante', category: 'energizante', stock:15}
           ])
 
       
@@ -48,6 +48,10 @@ function App() {
        
       <Route exact path="/productos/:name">
         <ItemDetailContainer  item={prod}/>
+      </Route>
+
+      <Route exact path="/cart">
+        cart
       </Route>
 
       <Route exact path="*">
