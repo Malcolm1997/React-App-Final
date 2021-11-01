@@ -1,12 +1,12 @@
-import React , {useState} from 'react'
+import React , {useState, useContext} from 'react'
 import './ItemCount.css'
-import {useCartContext} from '../CartContext/CartContext'
+import {CartContext} from '../CartContext/CartContext'
 
 
 const ItemCount = ({item, show, setShow}) => {
 
 
-    const {addItem} = useCartContext
+    const {addItem} = useContext(CartContext)
 
 
     const [contador, setContador] = useState(0)
@@ -22,7 +22,7 @@ const ItemCount = ({item, show, setShow}) => {
                 <button onClick={onAdd}> + </button>
             </div>
 
-            <button className="btnAgregarCarrito" onClick={() => addItem()}>Agregar al carrito</button>
+            <button className="btnAgregarCarrito" onClick={() => addItem(item, contador)}>Agregar al carrito</button>
 
         </div>
     )
