@@ -28,7 +28,7 @@ const ItemList = () => {
     useEffect(() => {
         
         tarea.then(res => {
-             if(category != undefined){
+             if(category !== undefined){
                  const result = res.filter(item => item.category === category)
                  setProd(result)
              } else {

@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar/NavBar';
 import Main from './Components/Main/Main';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import React, {useEffect, useState} from 'react';
+import CartContextProvider from './Components/CartContext/CartContext'
 
 
 
@@ -35,7 +36,11 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+
+    
+
+    <CartContextProvider>
+      <BrowserRouter>
       <NavBar/>
     <Switch>
       <Route exact path="/">
@@ -60,6 +65,9 @@ function App() {
 
     </Switch>
     </BrowserRouter>
+    </CartContextProvider>
+
+    
   );
 }
 

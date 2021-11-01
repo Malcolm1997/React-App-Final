@@ -6,7 +6,7 @@ const ItemDetailContainer = ({item}) => {
     const {name} = useParams()
 
 
-    const product = item.find( items => items.name == name)
+    const product = item.find( items => items.name === name)
 
 
 
