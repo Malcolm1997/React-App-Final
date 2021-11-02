@@ -5,9 +5,11 @@ import { CartContext } from '../CartContext/CartContext'
 
 const Cart = () => {
 
-    const {cart, removeItem} = useContext(CartContext)
+    const {cart, removeItem, clearCart} = useContext(CartContext)
 
+    let totalDeLaCompra = 0
 
+    cart.forEach((el)=> totalDeLaCompra += el.cantidad * el.item.precio)
 
     return (
         <div>
@@ -33,6 +35,16 @@ const Cart = () => {
                     </div>
                 )
             }
+
+            <tr>
+                <td></td>
+                <td>Total de la compra:</td>
+                <td></td>
+                <td>{totalDeLaCompra}</td>
+                <td></td>
+            </tr>
+
+            <button onClick={()=> clearCart()}>Vaciar carro</button>
 
 
 

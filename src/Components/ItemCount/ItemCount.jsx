@@ -22,7 +22,7 @@ const ItemCount = ({item, show, setShow}) => {
                 <button onClick={onAdd}> + </button>
             </div>
 
-            <button className="btnAgregarCarrito" onClick={() => addItem(item, contador)}>Agregar al carrito</button>
+            {!show && <button className="btnAgregarCarrito" onClick={() => addItem(item, contador, setShow)}>Agregar al carrito</button>}
 
         </div>
     )

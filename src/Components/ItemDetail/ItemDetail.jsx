@@ -17,7 +17,7 @@ const ItemDetail = ({product}) => {
             <h4>$ {product.precio}</h4>
             <ItemCount item={product} show={show} setShow={setShow}/>
 
-            {show && <button><Link to={`/cart`}>Finalizar Compra</Link> </button>}
+            {show && <button><Link to={`/cart`}>Terminar mi Compra</Link> </button>}
 
         </div>
     )

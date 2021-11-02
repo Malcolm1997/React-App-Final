@@ -9,11 +9,13 @@ function CartContextProvider ( {children} ) {
 
     const [cart, setCart] = useState([])
 
-    const addItem = (nuevoItem, nuevaCantidad) => {
+    const addItem = (nuevoItem, nuevaCantidad, setShow) => {
         
         const {cantidad = 0} = cart.find(el => el.item.id === nuevoItem.id) || {}
         const newCart = cart.filter((el) => el.item.id !== nuevoItem.id)
         setCart([...newCart, {item:nuevoItem, cantidad: nuevaCantidad + cantidad}]) 
+
+        setShow(true)
     }
 
     const clearCart = () => setCart([])
