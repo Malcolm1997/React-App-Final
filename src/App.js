@@ -5,6 +5,7 @@ import Main from './Components/Main/Main';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import React, {useEffect, useState} from 'react';
 import CartContextProvider from './Components/CartContext/CartContext'
+import Cart from './Components/Cart/Cart'
 
 
 
@@ -56,7 +57,7 @@ function App() {
       </Route>
 
       <Route exact path="/cart">
-        cart
+        <Cart/>
       </Route>
 
       <Route exact path="*">
