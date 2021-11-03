@@ -9,7 +9,7 @@ const Cart = () => {
 
     let totalDeLaCompra = 0
 
-    cart.forEach((el)=> totalDeLaCompra += el.cantidad * el.item.precio)
+    cart.forEach((el)=> totalDeLaCompra += el.cantidad * el.item.price)
 
     return (
         <div>
@@ -25,9 +25,9 @@ const Cart = () => {
                 return <tr>
                     <td>{el.cantidad}</td>
                     <td>{el.item.name}</td>
-                    <td>{el.item.precio}</td>
+                    <td>{el.item.price}</td>
                     <td><button onClick={()=> removeItem(el.item.id)}>Eliminar item</button></td>
-                    <td>{el.item.precio * el.cantidad}</td>
+                    <td>{el.item.price * el.cantidad}</td>
                 </tr>
             }) : ( <div>
                         <h2>No hay items</h2>

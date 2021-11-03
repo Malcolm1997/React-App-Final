@@ -14,7 +14,7 @@ const ItemDetail = ({product}) => {
         <div className="productDetail">
             <h2 className="nameProductDetail">{product.name}</h2>
             <p>{product.description}</p>
-            <h4>$ {product.precio}</h4>
+            <h4>$ {product.price}</h4>
             <ItemCount item={product} show={show} setShow={setShow}/>
 
             {show && <button><Link to={`/cart`}>Terminar mi Compra</Link> </button>}

@@ -6,6 +6,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import React, {useEffect, useState} from 'react';
 import CartContextProvider from './Components/CartContext/CartContext'
 import Cart from './Components/Cart/Cart'
+import {getFirestore} from './services/getFirebase'
 
 
 
@@ -14,27 +15,16 @@ function App() {
 
   const [prod, setProd] = useState(null)
 
-
-  const tarea = new Promise((resolve, reject) => {
-      
-          
-          resolve([
-            {id: '1', name: 'Coca', precio: 200, description:'Es una gaseosa', category: 'gaseosa', stock:5},
-            {id: '2', name: 'Sprite', precio: 150, description:'Es una gaseosa', category: 'gaseosa', stock:9},
-            {id: '3', name: 'Vodka', precio: 600, description:'Es una bebida alcholica', category: 'alcohol', stock:5},
-            {id: '4', name: 'Fernet', precio: 800, description:'Es una bebida alcholica', category: 'alcohol', stock:9},
-            {id: '5', name: 'Speed', precio: 100, description:'Es un energizante', category: 'energizante', stock:15}
-          ])
-
-      
-  })
-
   useEffect(() => {
-      tarea.then(res => setProd(res))
-  },)
+
+      const db = getFirestore()
+      db.collection('productos').get()
+      .then(res => setProd(res.docs.map(el => ( { id: el.id , ...el.data() } ) ) ) )
+
+  },[prod])
 
 
-
+console.log(prod)
 
   return (
 
