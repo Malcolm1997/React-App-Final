@@ -16,11 +16,11 @@ const ItemCount = ({item, show, setShow}) => {
 
     return (
         <div>
-            <div className="containerCount">
+            {!show && <div className="containerCount">
                 <button onClick={onRemove}> - </button>
                 <p>{contador}</p>
                 <button onClick={onAdd}> + </button>
-            </div>
+            </div>}
 
             {!show && <button className="btnAgregarCarrito" onClick={() => addItem(item, contador, setShow)}>Agregar al carrito</button>}
 

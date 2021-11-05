@@ -16,8 +16,11 @@ const ItemDetail = ({product}) => {
             <p>{product.description}</p>
             <h4>$ {product.price}</h4>
             <ItemCount item={product} show={show} setShow={setShow}/>
-
-            {show && <button><Link to={`/cart`}>Terminar mi Compra</Link> </button>}
+            
+            <div className="containerAcciones">
+                {show && <button className="btnTerminarCompra"><Link to={`/`}>Seguir Comprando</Link> </button>}
+                {show && <button className="btnTerminarCompra"><Link to={`/cart`}>Terminar mi Compra</Link> </button>}
+            </div>
 
         </div>
     )

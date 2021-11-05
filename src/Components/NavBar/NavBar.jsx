@@ -21,7 +21,7 @@ const NavBar = () => {
                     <li><Link to={`/category/gaseosa`}>Gaseosa</Link></li>
                     <li><Link to={`/category/energizante`}>Energizante</Link></li>
                     <li><Link to={`/category/alcohol`}>Alcohol</Link></li>
-                    {cart.length > 0 && <li>{contador}<Link to={`/cart`}><CartWidget/></Link></li>}
+                    {cart.length > 0 && <li><Link to={`/cart`}><CartWidget/></Link><span>{contador}</span></li>}
                 </ul>
             </nav>
         </div>
