@@ -4,14 +4,13 @@ import 'firebase/firestore'
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA6cV62EAFOkq5LrdJtDqioD-uD0KzJPgg",
-    authDomain: "persistencia-en-la-nube.firebaseapp.com",
-    databaseURL: "https://persistencia-en-la-nube-default-rtdb.firebaseio.com",
-    projectId: "persistencia-en-la-nube",
-    storageBucket: "persistencia-en-la-nube.appspot.com",
-    messagingSenderId: "1093439379386",
-    appId: "1:1093439379386:web:fa8110b006c54722fc6f83"
-  };
+  apiKey: "AIzaSyDPombtAnkOWq68yj9aS3hf20Ke48Kdddc",
+  authDomain: "proyectofinalreact-47bb5.firebaseapp.com",
+  projectId: "proyectofinalreact-47bb5",
+  storageBucket: "proyectofinalreact-47bb5.appspot.com",
+  messagingSenderId: "85154356003",
+  appId: "1:85154356003:web:b8fefd2c1d077cfc3cca96"
+};
 
 
 

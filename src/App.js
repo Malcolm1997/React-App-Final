@@ -12,16 +12,14 @@ import {getFirestore} from './services/getFirebase'
 
 function App() {
 
-
   const [prod, setProd] = useState(null)
 
   useEffect(() => {
 
-      const db = getFirestore()
-      db.collection('productos').get()
-      .then(res => setProd(res.docs.map(el => ( { id: el.id , ...el.data() } ) ) ) )
-
-  },[prod])
+       const db = getFirestore()
+       db.collection('productos').get()
+       .then(res => setProd(res.docs.map(el => ( { id: el.id , ...el.data() } ) ) ) )
+  },[])
 
 
 console.log(prod)
