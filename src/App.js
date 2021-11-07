@@ -21,9 +21,6 @@ function App() {
        .then(res => setProd(res.docs.map(el => ( { id: el.id , ...el.data() } ) ) ) )
   },[])
 
-
-console.log(prod)
-
   return (
 
     

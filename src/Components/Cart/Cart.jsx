@@ -8,7 +8,7 @@ import './Cart.css'
 
 const Cart = () => {
 
-    const {cart, removeItem, clearCart} = useContext(CartContext)
+    const {cart, removeItem, clearCart, crearOrdenDePedido} = useContext(CartContext)
 
     let totalDeLaCompra = 0
 
@@ -48,11 +48,14 @@ const Cart = () => {
                     <td>{totalDeLaCompra}</td>
                     <td></td>
                 </tr>}
-
-                {cart.length !== 0 && <button onClick={()=> clearCart()}>Vaciar carro</button>}
+                
 
             </table>
 
+                <div className="opcionesFinales">
+                    {cart.length !== 0 && <button onClick={()=> clearCart()}>Vaciar carro</button>}
+                    {cart.length !== 0 && <button onClick={()=> crearOrdenDePedido(cart)}>Terminar compra</button>}
+                </div>
 
 
 

@@ -13,3 +13,13 @@ tr td{
     font-size: 1.5rem;
 }
 
+.opcionesFinales {
+    display:flex;
+    justify-content:space-between;
+    width: 40%;
+    margin:5% 30%;
+}
+
+.opcionesFinales button {
+    padding:5%;
+}
